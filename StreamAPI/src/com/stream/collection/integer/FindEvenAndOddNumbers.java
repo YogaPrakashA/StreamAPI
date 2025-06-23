@@ -17,8 +17,8 @@ public class FindEvenAndOddNumbers {
     private static void findEvenAndOddNumbers(List<Integer> list) {
 
         // Type-1
-        list.stream().filter(x -> x % 2 == 0).forEach(i -> System.out.println("odd number: " + i));
-        list.stream().filter(x -> x % 2 == 1).forEach(i -> System.out.println("even number: " + i));
+        list.stream().filter(x -> x % 2 == 0).forEach(i -> System.out.println("even number: " + i));
+        list.stream().filter(x -> x % 2 == 1).forEach(i -> System.out.println("odd number: " + i));
 
         System.out.println("---------------------");
 

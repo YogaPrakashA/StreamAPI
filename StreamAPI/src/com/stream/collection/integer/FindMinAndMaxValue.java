@@ -10,7 +10,7 @@ public class FindMinAndMaxValue {
 
         // Type-1
         OptionalInt minInt = Arrays.stream(li).min();
-        OptionalInt maxInt = Arrays.stream(li).min();
+        OptionalInt maxInt = Arrays.stream(li).max();
 
         System.out.println("minInt : "+minInt);
         System.out.println("maxInt : "+maxInt);
