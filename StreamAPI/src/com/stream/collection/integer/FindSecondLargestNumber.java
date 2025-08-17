@@ -1,8 +1,6 @@
 package com.stream.collection.integer;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class FindSecondLargestNumber {
     public static void main(String[] args) {
@@ -24,6 +22,9 @@ public class FindSecondLargestNumber {
         System.out.println("list2 : " + findSecondLargest1(list2));
         System.out.println("list3 : " + findSecondLargest1(list3));
 
+        int[] arr4 = {45, 45, 2, 45, 44, 10, 45};
+        findSecondLargestNumber(arr4);
+
     }
 
     public static int findSecondLargest(int[] arr) {
@@ -34,5 +35,27 @@ public class FindSecondLargestNumber {
     public static int findSecondLargest1(List<Integer> arr) {
 
         return arr.stream().distinct().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+    }
+
+    public static void findSecondLargestNumber(int[] arr) {
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    arr[i] = arr[i] + arr[j];
+                    arr[j] = arr[i] - arr[j];
+                    arr[i] = arr[i] - arr[j];
+                }
+            }
+        }
+
+        int secondLargeElement = arr[arr.length - 1];
+        for (int k = arr.length - 1; k >= 0; k--) {
+            if (arr[k] < secondLargeElement) {
+                System.err.println(arr[k]);
+                break;
+            }
+        }
+
     }
 }
