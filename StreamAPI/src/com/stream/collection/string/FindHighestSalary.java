@@ -27,6 +27,6 @@ public class FindHighestSalary {
 
         if (maxSalary.isPresent())
             System.out.println(maxSalary.get());
-        
+
     }
 }
